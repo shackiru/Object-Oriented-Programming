@@ -2,6 +2,7 @@ package introduction;
 
 import java.util.Iterator;
 import java.util.Scanner;
+import java.util.Vector;
 
 public class Introduction 
 {
@@ -22,17 +23,22 @@ public class Introduction
     }
     public static void main(String[] args)
     {
-        new Introduction();
-        int n = 10;
+        //new Introduction();
         String input;
-
-        if(n > 5)
-        {
-            System.out.println("Angka = " + n + " Hebat");
-        }
 
         System.out.println("Hello World");
         System.out.println("Good Evening!");
+
+        int[] numbers = {1, 2 , 3, 4, 5};
+//        for(int i = 0; i < numbers.length; i++)
+//        {
+//            System.out.println(numbers[i]);
+//        }
+
+        for(int n : numbers)
+        {
+            System.out.println(n);
+        }
     }
     
 }
