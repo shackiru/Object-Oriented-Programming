@@ -1,19 +1,37 @@
 package com.example.mahasiswa;
 
+
+import java.util.Scanner;
+
 public class Main
 {
     public Main()
     {
-        Mahasiswa m1 = new Mahasiswa();
-        m1.setNIM("1234567890");
-        System.out.println("NIM = " +  m1.getNIM());
+        Rectangle r1 = new Rectangle();
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Input Width: ");
+        r1.setWidth(sc.nextInt());
+        sc.nextLine();
 
-        m1.setName("Shaquille");
-        System.out.println("Name = " + m1.getName());
+        System.out.print("Input Height: ");
+        r1.setHeight(sc.nextInt());
+        sc.nextLine();
 
-        m1.setGPA(3.99);
-        System.out.println("GPA = " + m1.getGPA());
+        System.out.println("Width: " + r1.getWidth());
+        System.out.println("Height: " + r1.getHeight());
+        System.out.println("Area: " + r1.getArea());
+        System.out.println("Around: " + r1.getAround());
+
+        int a = 0;
+        int b = 0;
+        a = sc.nextInt();
+        b = sc.nextInt();
+        Rectangle r2 = new Rectangle(a,b);
+
+        r2.print();
     }
+
+
     public static void main(String[] args)
     {
         new Main();

@@ -6,9 +6,18 @@ public class Mahasiswa
     private String name;
     private double GPA;
 
+
+
     public Mahasiswa()
     {
         System.out.println("Mahasiswa dibuat");
+    }
+
+    public Mahasiswa(String NIM, String name, double GPA)
+    {
+        this.NIM = NIM;
+        this.name = name;
+        this.GPA = GPA;
     }
     public String getNIM()
     {
@@ -37,5 +46,12 @@ public class Mahasiswa
     public void setGPA(double GPA)
     {
         this.GPA = GPA;
+    }
+
+    public void print()
+    {
+        System.out.println("NIM: " + NIM);
+        System.out.println("Name : " + name);
+        System.out.println("GPA: " + GPA);
     }
 }
