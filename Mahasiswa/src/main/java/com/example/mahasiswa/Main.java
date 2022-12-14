@@ -2,6 +2,12 @@ package com.example.mahasiswa;
 
 public class Main
 {
-    Mahasiswa m1;
-
+    public Main()
+    {
+        Mahasiswa m1 = new Mahasiswa();
+    }
+    public static void main(String[] args)
+    {
+        new Main();
+    }
 }
