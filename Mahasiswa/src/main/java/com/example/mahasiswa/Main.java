@@ -24,11 +24,48 @@ public class Main
 
         int a = 0;
         int b = 0;
+        System.out.print("Input Width: ");
         a = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Input Height: ");
         b = sc.nextInt();
+        sc.nextLine();
         Rectangle r2 = new Rectangle(a,b);
-
         r2.print();
+
+        Product p1 = new Product();
+        System.out.print("Input Name: ");
+        p1.setName(sc.nextLine());
+
+        System.out.print("Input Price: ");
+        p1.setPrice(sc.nextDouble());
+        sc.nextLine();
+
+        System.out.print("Input Stock: ");
+        p1.setStock(sc.nextInt());
+        sc.nextLine();
+
+        System.out.println("Name: " + p1.getName());
+        System.out.println("Price: " + p1.getPrice());
+        System.out.println("Stock: " + p1.getStock());
+
+        String name;
+        double price;
+        int stock;
+
+        System.out.print("Input Name: ");
+        name = sc.nextLine();
+
+        System.out.print("Input Price: ");
+        price = sc.nextDouble();
+        sc.nextLine();
+
+        System.out.print("Input Stock: ");
+        stock = sc.nextInt();
+        sc.nextLine();
+
+        Product p2 =  new Product(name, price, stock);
+        p2.print();
     }
 
 
