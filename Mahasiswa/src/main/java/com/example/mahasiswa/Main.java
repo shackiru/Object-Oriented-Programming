@@ -49,6 +49,15 @@ public class Main
         System.out.println("Price: " + p1.getPrice());
         System.out.println("Stock: " + p1.getStock());
 
+        if(p1.getStock() < 10)
+        {
+            System.out.println("Low Stock!");
+        }
+        else
+        {
+            System.out.println("High Stock!");
+        }
+
         String name;
         double price;
         int stock;
