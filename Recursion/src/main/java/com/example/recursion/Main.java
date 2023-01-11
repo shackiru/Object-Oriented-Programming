@@ -5,11 +5,13 @@ public class Main
     public static void main(String[] args)
     {
         Pen p = new Pen();
-        System.out.println(p.color);
-        System.out.println(p.type);
-        System.out.println(p.point);
-        p.click();
-        System.out.println(p.clicked);
+        Headphones hp = new Headphones();
+        Mouse mu = new Mouse();
+
+        mu.scrollUp();
+        mu.rightClick();
+        System.out.println(mu.texture);
+
     }
     public static void sayHi(int n)
     {
