@@ -5,6 +5,7 @@ public class Product
     private String name;
     private double price;
     private int stock;
+    private int quantity;
 
     public String getName()
     {
@@ -35,6 +36,16 @@ public class Product
     {
         this.stock = stock;
     }
+
+    public int getQuantity()
+    {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity)
+    {
+        this.quantity = quantity;
+    }
     public Product()
     {
 
@@ -43,6 +54,29 @@ public class Product
         this.name = name;
         this.price = price;
         this.stock = stock;
+        this.quantity = quantity;
+    }
+
+    public boolean isLowStock()
+    {
+        if(stock < 10)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public void sellProduct(int quantity)
+    {
+        if(quantity > stock)
+        {
+            System.out.println("Out of Stock!");
+        }
+        else
+        {
+            stock = stock - quantity;
+            System.out.println("stock");
+        }
     }
 
     public void print()
@@ -50,5 +84,6 @@ public class Product
         System.out.println("Name: " + name);
         System.out.println("Price: " + price);
         System.out.println("Stock: " + stock);
+        System.out.println("Low Stock?" + isLowStock());
     }
 }

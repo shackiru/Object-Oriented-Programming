@@ -50,6 +50,15 @@ public class Rectangle
         return (2 * width) + (2 * height);
     }
 
+    public boolean isSquare()
+    {
+        if(width == height)
+        {
+            return true;
+        }
+        return false;
+    }
+
     public void print()
     {
         System.out.println("Width: " + width);
