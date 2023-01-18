@@ -2,12 +2,13 @@ package com.example.session04;
 
 public class Person
 {
-    private String name;
-    private int age;
+    protected String name;
+    protected int age;
 
-    public Person()
+    public Person(String budi)
     {
         System.out.println("Person is created!");
+        name = "deni";
     }
     public Person(String name, int age)
     {
