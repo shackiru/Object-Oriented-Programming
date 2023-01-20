@@ -21,6 +21,11 @@ public class Person
         return name;
     }
 
+    public void walk()
+    {
+        System.out.println("Person is walking!");
+    }
+
     public void setName(String name)
     {
         this.name = name;

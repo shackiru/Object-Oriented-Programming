@@ -10,4 +10,15 @@ public class Student extends Person
 //        name = "budi";
 //        System.out.println("Student name: " + getName());
     }
+    @Override
+    public void walk()
+    {
+        System.out.println("Student is walking!");
+    }
+
+    // overloading
+    public void walk(int n)
+    {
+        System.out.println("Student is walking " + n + " km");
+    }
 }
