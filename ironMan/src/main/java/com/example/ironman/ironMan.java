@@ -59,7 +59,7 @@ public class ironMan
                 System.out.println("Energy Cannot Exceed Than 250!");
             }
         }
-        while(energy < 0 || energy > 250);
+        while(energyTemp < 0 || energyTemp > 250);
         this.energy = energyTemp;
     }
 
