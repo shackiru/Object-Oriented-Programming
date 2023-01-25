@@ -69,6 +69,14 @@ public class Customer
 
     public void setPhone(String phone)
     {
+        String phoneTemp;
+        do
+        {
+            System.out.print("Enter your phone number here: ");
+            phoneTemp = scan.nextLine();
+
+        }
+        while();
         this.phone = phone;
     }
 
