@@ -4,6 +4,7 @@ public class Troop
 {
     protected int health;
     protected int dmg;
+    protected int swordCount = 5;
 
     public void attack()
     {

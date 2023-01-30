@@ -3,6 +3,20 @@ import java.util.*;
 
 public class Customer
 {
+    public Customer()
+    {
+
+    }
+
+    public Customer(String id, String name, String address, String phone, double money)
+    {
+        this.id = id;
+        this.name = name;
+        this.address = address;
+        this.phone = phone;
+        this.money = money;
+    }
+
     Scanner scan = new Scanner(System.in);
     protected String id;
     protected String name;
@@ -15,8 +29,9 @@ public class Customer
         return id;
     }
 
-    public void setId(String id)
+    public void setId()
     {
+        String id = "" + (long)(Math.random() * 4000000000L);
         this.id = id;
     }
 
@@ -67,17 +82,17 @@ public class Customer
         return phone;
     }
 
-    public void setPhone(String phone)
+    public void setPhone()
     {
+        String regex = "^[0-9]{10}$";
         String phoneTemp;
         do
         {
-            System.out.print("Enter your phone number here: ");
+            System.out.print("Enter your phone number: ");
             phoneTemp = scan.nextLine();
-
         }
-        while();
-        this.phone = phone;
+        while(phoneTemp.matches(regex));
+        this.phone = phoneTemp;
     }
 
     public double getMoney()
@@ -85,8 +100,20 @@ public class Customer
         return money;
     }
 
-    public void setMoney(double money)
+    public void setMoney()
     {
-        this.money = money;
+        double moneyTemp;
+        do
+        {
+            System.out.print("Input your money here: ");
+            moneyTemp = scan.nextDouble();
+            scan.nextLine();
+            if(moneyTemp < 0 || moneyTemp > 1000000)
+            {
+                System.out.println("Invalid money input!");
+            }
+        }
+        while (moneyTemp < 0 || moneyTemp> 1000000);
+        this.money = moneyTemp;
     }
 }
