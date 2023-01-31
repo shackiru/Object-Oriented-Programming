@@ -3,6 +3,14 @@ import java.util.*;
 
 public class Customer
 {
+
+    Scanner scan = new Scanner(System.in);
+    protected String id;
+    protected String name;
+    protected String address;
+    protected String phone;
+    protected double money;
+
     public Customer()
     {
 
@@ -17,21 +25,12 @@ public class Customer
         this.money = money;
     }
 
-    Scanner scan = new Scanner(System.in);
-    protected String id;
-    protected String name;
-    protected String address;
-    protected String phone;
-    protected double money;
-
-    public String getId()
-    {
+    public String getId() {
         return id;
     }
 
-    public void setId()
+    public void setId(String id)
     {
-        String id = "" + (long)(Math.random() * 4000000000L);
         this.id = id;
     }
 
@@ -40,20 +39,9 @@ public class Customer
         return name;
     }
 
-    public void setName()
+    public void setName(String name)
     {
-        String nameTemp;
-        do
-        {
-            System.out.print("Enter your name here [5 - 20 Characters]: ");
-            nameTemp = scan.nextLine();
-            if(nameTemp.length() < 5 || nameTemp.length() > 20)
-            {
-                System.out.println("Invalid name input!");
-            }
-        }
-        while(nameTemp.length() < 5 || nameTemp.length() > 20);
-        this.name = nameTemp;
+        this.name = name;
     }
 
     public String getAddress()
@@ -61,20 +49,9 @@ public class Customer
         return address;
     }
 
-    public void setAddress()
+    public void setAddress(String address)
     {
-        String addressTemp;
-        do
-        {
-            System.out.print("Enter your address here [5 - 30 Characters]: ");
-            addressTemp = scan.nextLine();
-            if(addressTemp.length() < 5 || addressTemp.length() > 30)
-            {
-                System.out.print("Invalid address input!");
-            }
-        }
-        while(addressTemp.length() < 5 || addressTemp.length() > 30);
-        this.address = addressTemp;
+        this.address = address;
     }
 
     public String getPhone()
@@ -82,17 +59,9 @@ public class Customer
         return phone;
     }
 
-    public void setPhone()
+    public void setPhone(String phone)
     {
-        String regex = "^[0-9]{10}$";
-        String phoneTemp;
-        do
-        {
-            System.out.print("Enter your phone number: ");
-            phoneTemp = scan.nextLine();
-        }
-        while(phoneTemp.matches(regex));
-        this.phone = phoneTemp;
+        this.phone = phone;
     }
 
     public double getMoney()
@@ -100,20 +69,8 @@ public class Customer
         return money;
     }
 
-    public void setMoney()
+    public void setMoney(double money)
     {
-        double moneyTemp;
-        do
-        {
-            System.out.print("Input your money here: ");
-            moneyTemp = scan.nextDouble();
-            scan.nextLine();
-            if(moneyTemp < 0 || moneyTemp > 1000000)
-            {
-                System.out.println("Invalid money input!");
-            }
-        }
-        while (moneyTemp < 0 || moneyTemp> 1000000);
-        this.money = moneyTemp;
+        this.money = money;
     }
 }

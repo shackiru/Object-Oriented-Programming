@@ -1,4 +1,6 @@
 package com.example.gamestation;
 
-public class Game {
+public class Game
+{
+
 }

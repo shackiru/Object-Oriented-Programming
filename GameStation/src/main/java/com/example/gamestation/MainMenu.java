@@ -12,6 +12,11 @@ public class MainMenu
     Employee e = new Employee();
     private String employeeIDTemp;
     private String employeeNameTemp;
+    private String customerIDTemp;
+    private String customerNameTemp;
+    private String customerAddressTemp;
+    private String customerPhoneTemp;
+    private double customerMoneyTemp;
     public void promptEnterKey()
     {
         System.out.println("Press \"ENTER\" to continue...");
@@ -34,6 +39,54 @@ public class MainMenu
         e.setEmployeeID(employeeIDTemp);
         e.setEmployeeName(employeeNameTemp);
         employees.add(e);
+    }
+
+    public void createCustomer()
+    {
+        customerIDTemp = "" + (long)(Math.random() * 4000000000L);
+        do
+        {
+            System.out.print("Enter Customer Name: ");
+            customerNameTemp = scan.nextLine();
+            if(customerNameTemp.length() < 5 || customerNameTemp.length() > 20)
+            {
+                System.out.println("Invalid name input!");
+            }
+        }
+        while(customerNameTemp.length() < 5 || customerNameTemp.length() > 20);
+
+        do
+        {
+            System.out.print("Enter Customer Address: ");
+            customerAddressTemp = scan.nextLine();
+            if(customerAddressTemp.length() < 5 || customerAddressTemp.length() > 20)
+            {
+                System.out.println("Invalid address input!");
+            }
+        }
+        while(customerAddressTemp.length() < 5 || customerAddressTemp.length() > 20);
+
+        do
+        {
+            System.out.print("Enter Customer Phone: ");
+            customerPhoneTemp = scan.nextLine();
+            if(customerPhoneTemp.length() < 5 || customerPhoneTemp.length() > 20)
+            {
+                System.out.println("Invalid phone input!");
+            }
+        }
+        while(customerPhoneTemp.length() < 8 || customerPhoneTemp.length() > 11);
+
+        do
+        {
+            System.out.print("Enter Customer Money: ");
+            customerMoneyTemp = scan.nextDouble();
+            if(customerMoneyTemp < 0)
+            {
+                System.out.println("Invalid money input!");
+            }
+        }
+        while(customerMoneyTemp < 10000 || customerMoneyTemp > 1000000);
     }
 
     public void displayEmployeeProfile()
