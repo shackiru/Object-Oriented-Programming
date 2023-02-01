@@ -14,20 +14,12 @@ public class MainMenu
     Order o = new Order();
     Employee e = new Employee();
     Customer c = new Customer();
-    private String employeeIDTemp;
-    private String employeeNameTemp;
-    private String customerIDTemp;
-    private String customerNameTemp;
-    private String customerAddressTemp;
-    private String customerPhoneTemp;
-    private double customerMoneyTemp;
     private String gameIDTemp;
     private String gameNameTemp;
     private String gameTypeTemp;
     private String gamePlatformTemp;
     private double gamePriceTemp;
     private int gameQuantityTemp;
-    private String orderIDTemp;
     private double orderPriceTemp;
     private String orderStatusTemp;
     private int orderQuantityTemp;
@@ -39,7 +31,8 @@ public class MainMenu
     }
     public void createEmployee()
     {
-        employeeIDTemp = "" + (long)(Math.random() * 4000000000L);
+        String employeeIDTemp = "" + (long) (Math.random() * 4000000000L);
+        String employeeNameTemp;
         do
         {
             System.out.print("Enter Employee Name: ");
@@ -58,7 +51,8 @@ public class MainMenu
 
     public void createCustomer()
     {
-        customerIDTemp = "" + (long)(Math.random() * 4000000000L);
+        String customerIDTemp = "" + (long) (Math.random() * 4000000000L);
+        String customerNameTemp;
         do
         {
             System.out.print("Enter Customer Name: ");
@@ -70,6 +64,7 @@ public class MainMenu
         }
         while(customerNameTemp.length() < 5 || customerNameTemp.length() > 20);
 
+        String customerAddressTemp;
         do
         {
             System.out.print("Enter Customer Address: ");
@@ -81,6 +76,7 @@ public class MainMenu
         }
         while(customerAddressTemp.length() < 5 || customerAddressTemp.length() > 20);
 
+        String customerPhoneTemp;
         do
         {
             System.out.print("Enter Customer Phone: ");
@@ -92,6 +88,7 @@ public class MainMenu
         }
         while(customerPhoneTemp.length() < 8 || customerPhoneTemp.length() > 11);
 
+        double customerMoneyTemp;
         do
         {
             System.out.print("Enter Customer Money: ");
@@ -106,27 +103,50 @@ public class MainMenu
 
     public void displayGame()
     {
-        for(int i = 0; i < games.size(); i++)
+        if(games.size() == 0)
         {
-            System.out.println("+========================+");
-            System.out.println("| Game ID:               | " + games.get(i).getGameID());
-            System.out.println("| Game Name:             | " + games.get(i).getGameName());
-            System.out.println("| Game Genre:            | " + games.get(i).getGameType());
-            System.out.println("| Game Platform:         | " + games.get(i).getGamePlatform());
-            System.out.println("| Game Price:            | " + games.get(i).getGamePrice());
-            System.out.println("| Game Quantity:         | " + games.get(i).getGameQuantity());
-            System.out.println("+========================+");
+            System.out.println("No games available!");
+            return;
+        }
+        else
+        {
+            for (Game game : games)
+            {
+                System.out.println("+========================+");
+                System.out.println("| Game ID:               | " + game.getGameID());
+                System.out.println("| Game Name:             | " + game.getGameName());
+                System.out.println("| Game Genre:            | " + game.getGameType());
+                System.out.println("| Game Platform:         | " + game.getGamePlatform());
+                System.out.println("| Game Price:            | " + game.getGamePrice());
+                System.out.println("| Game Quantity:         | " + game.getGameQuantity());
+                System.out.println("+========================+");
+            }
         }
     }
 
     public void createOrder()
     {
-        orderIDTemp = "" + (long)(Math.random() * 4000000000L);
-        do
+        if(games.size() == 0)
         {
-            displayGame();
+            System.out.println("No game available!");
+            promptEnterKey();
         }
-        while();
+        else
+        {
+            String orderIDTemp = "" + (long) (Math.random() * 4000000000L);
+            displayGame();
+            int chooseGame = 0;
+            do
+            {
+                System.out.print("Choose Game: ");
+                chooseGame = scan.nextInt();
+                if(chooseGame < 0 || chooseGame > games.size())
+                {
+                    System.out.println("Invalid game input!");
+                }
+            }
+            while(chooseGame < 0 || chooseGame > games.size());
+        }
     }
 
     public void displayEmployeeProfile()
@@ -192,6 +212,7 @@ public class MainMenu
     }
     public static void mainMenu(String[] args)
     {
+        MainMenu m1 = new MainMenu();
         int select = 0;
         do
         {
@@ -207,13 +228,16 @@ public class MainMenu
             switch (select)
             {
                 case 1:
-                    MainMenu m1 = new MainMenu();
-                    m1.createEmployee();
+                    if(m1.employees.size() == 0)
+                    {
+                        System.out.println("No employee available!");
+                        System.out.println("Create employee first!");
+                        m1.createEmployee();
+                    }
                     m1.EmployeeMenu();
                     break;
                 case 2:
-                    MainMenu m2 = new MainMenu();
-                    m2.customerMenu();
+                    m1.customerMenu();
                     break;
                 case 3:
                     System.exit(0);

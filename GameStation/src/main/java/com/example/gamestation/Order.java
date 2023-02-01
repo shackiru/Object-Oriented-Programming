@@ -13,7 +13,7 @@ public class Order
 
     }
 
-    public Order(String idOrder, String orderPrice, String orderStatus, int orderQuantity)
+    public Order(String idOrder, double orderPrice, String orderStatus, int orderQuantity)
     {
         this.idOrder = idOrder;
         this.orderPrice = orderPrice;
@@ -31,12 +31,12 @@ public class Order
         this.idOrder = idOrder;
     }
 
-    public String getOrderPrice()
+    public double getOrderPrice()
     {
         return orderPrice;
     }
 
-    public void setOrderPrice(String orderPrice)
+    public void setOrderPrice(double orderPrice)
     {
         this.orderPrice = orderPrice;
     }
