@@ -10,6 +10,7 @@ public class MainMenu
     ArrayList<Employee> employees = new ArrayList<>();
     ArrayList<Game> games = new ArrayList<>();
     Employee e = new Employee();
+    Customer c = new Customer();
     private String employeeIDTemp;
     private String employeeNameTemp;
     private String customerIDTemp;
@@ -87,6 +88,11 @@ public class MainMenu
             }
         }
         while(customerMoneyTemp < 10000 || customerMoneyTemp > 1000000);
+    }
+
+    public void createOrder()
+    {
+
     }
 
     public void displayEmployeeProfile()
