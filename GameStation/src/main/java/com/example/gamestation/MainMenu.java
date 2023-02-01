@@ -6,9 +6,12 @@ public class MainMenu
 {
     static Scanner scan = new Scanner(System.in);
 
+    ArrayList<Order> orders = new ArrayList<>();
     ArrayList<Customer> customers = new ArrayList<>();
     ArrayList<Employee> employees = new ArrayList<>();
     ArrayList<Game> games = new ArrayList<>();
+
+    Order o = new Order();
     Employee e = new Employee();
     Customer c = new Customer();
     private String employeeIDTemp;
@@ -18,6 +21,17 @@ public class MainMenu
     private String customerAddressTemp;
     private String customerPhoneTemp;
     private double customerMoneyTemp;
+    private String gameIDTemp;
+    private String gameNameTemp;
+    private String gameTypeTemp;
+    private String gamePlatformTemp;
+    private double gamePriceTemp;
+    private int gameQuantityTemp;
+    private String orderIDTemp;
+    private double orderPriceTemp;
+    private String orderStatusTemp;
+    private int orderQuantityTemp;
+
     public void promptEnterKey()
     {
         System.out.println("Press \"ENTER\" to continue...");
@@ -90,9 +104,29 @@ public class MainMenu
         while(customerMoneyTemp < 10000 || customerMoneyTemp > 1000000);
     }
 
+    public void displayGame()
+    {
+        for(int i = 0; i < games.size(); i++)
+        {
+            System.out.println("+========================+");
+            System.out.println("| Game ID:               | " + games.get(i).getGameID());
+            System.out.println("| Game Name:             | " + games.get(i).getGameName());
+            System.out.println("| Game Genre:            | " + games.get(i).getGameType());
+            System.out.println("| Game Platform:         | " + games.get(i).getGamePlatform());
+            System.out.println("| Game Price:            | " + games.get(i).getGamePrice());
+            System.out.println("| Game Quantity:         | " + games.get(i).getGameQuantity());
+            System.out.println("+========================+");
+        }
+    }
+
     public void createOrder()
     {
-
+        orderIDTemp = "" + (long)(Math.random() * 4000000000L);
+        do
+        {
+            displayGame();
+        }
+        while();
     }
 
     public void displayEmployeeProfile()
@@ -147,7 +181,8 @@ public class MainMenu
             System.out.println("| 5. Check Money                 |");
             System.out.println("| 6. Profile Detail              |");
             System.out.println("| 7. Become Member (Rp.50.000)   |");
-            System.out.println("| 8. Exit                        |");
+            System.out.println("| 8. Checkout                    |");
+            System.out.println("| 9. Exit                        |");
             System.out.println("+--------------------------------+");
             System.out.print("Choose Menu >> ");
             select = scan.nextInt();
