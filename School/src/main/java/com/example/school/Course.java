@@ -6,6 +6,17 @@ public class Course
     protected String name;
     protected int scu;
 
+    public Course()
+    {
+
+    }
+
+    public Course(String code, String name, int scu)
+    {
+        this.code = code;
+        this.name = name;
+        this.scu = scu;
+    }
     public String getCode()
     {
         return code;
