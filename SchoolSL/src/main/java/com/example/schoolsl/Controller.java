@@ -155,7 +155,79 @@ public class Controller
 
     public void createSubject()
     {
+        String nameTemp;
+        String codeTemp;
+        int scuTemp;
 
+        do
+        {
+            System.out.print("Enter the class code: ");
+            codeTemp = scan.nextLine();
+            if(checkSubjectCode(codeTemp))
+            {
+                System.err.println("Class Code Already Exist");
+                System.err.println("Press ENTER to continue...");
+                scan.nextLine();
+            }
+            else if(codeTemp.length() > 4)
+            {
+                System.err.println("Name cannot exceed than 4 characters");
+                System.err.println("Press ENTER to continue...");
+                scan.nextLine();
+            }
+            else
+            {
+                break;
+            }
+        }
+        while(true);
+        do
+        {
+            System.out.print("Input subject name: ");
+            nameTemp = scan.nextLine();
+            if(checkSubject(nameTemp))
+            {
+                System.err.println("Subject Already Exist!");
+                System.err.println("Press ENTER to continue...");
+                scan.nextLine();
+            }
+            else if(nameTemp.length() < 8)
+            {
+                System.err.println("Name Must Be 8 Characters or above!");
+                System.err.println("Press ENTER to continue...");
+                scan.nextLine();
+            }
+            else
+            {
+                break;
+            }
+        }
+        while(true);
+        do
+        {
+            System.out.print("Enter the SCU [2 - 8]: ");
+            scuTemp = scan.nextInt();
+            scan.nextLine();
+            if(scuTemp < 2)
+            {
+                System.err.println("SCU cannot below than 2!");
+                System.err.println("Press ENTER to continue...");
+                scan.nextLine();
+            }
+            else if(scuTemp > 8)
+            {
+                System.err.println("SCU cannot exceed than 8!");
+                System.err.println("Press ENTER to continue...");
+                scan.nextLine();
+            }
+            else
+            {
+                break;
+            }
+        }
+        while(true);
+        subjects.add(new Subject(nameTemp, codeTemp, scuTemp));
+        System.out.println("Subject created!\nPress ENTER to continue...");
     }
     public void createScore()
     {
@@ -164,6 +236,29 @@ public class Controller
     public void createClass()
     {
 
+    }
+
+    public boolean checkSubject(String name)
+    {
+        for(Subject i: subjects)
+        {
+            if(i.getName().equalsIgnoreCase(name))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    public boolean checkSubjectCode(String code)
+    {
+        for(Subject i: subjects)
+        {
+            if(i.getName().equalsIgnoreCase(code))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     public Student checkStudent(String username, String password)

@@ -6,6 +6,13 @@ public class Score
     protected Subject subject;
     protected double score;
 
+    public Score(Student student, Subject subject, double score)
+    {
+        this.student = student;
+        this.subject = subject;
+        this.score = score;
+    }
+
     public Student getStudent()
     {
         return student;
