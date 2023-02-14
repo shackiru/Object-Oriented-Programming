@@ -10,10 +10,16 @@ public class Controller
     ArrayList<Subject> subjects = new ArrayList<>();
     ArrayList<Score> scores = new ArrayList<>();
     ArrayList<Lecturer> lecturers = new ArrayList<>();
+    ArrayList<Admin> admins = new ArrayList();
 
 
     static int nimTemp = 260000;
     static int nikTemp = 200000;
+    static int codeTemp = 250000;
+    public Controller()
+    {
+        admins.add(new Admin("admin1", "admin123", "admin", "A02"));
+    }
     public void createStudent()
     {
         String usernameTemp;
@@ -48,6 +54,9 @@ public class Controller
             if(passwordTemp.length() < 6)
             {
                 System.err.println("Password must be at least 6 characters!");
+                System.err.println("Press ENTER to continue...");
+                scan.nextLine();
+
             }
             else
             {
@@ -62,6 +71,8 @@ public class Controller
             if(nameTemp.length() < 6)
             {
                 System.err.println("Name must be at least 6 characters!");
+                System.err.println("Press ENTER to continue...");
+                scan.nextLine();
             }
             else
             {
@@ -89,6 +100,13 @@ public class Controller
                 return true;
             }
         }
+        for(Admin i: admins)
+        {
+            if(i.getUsername().equalsIgnoreCase(username))
+            {
+                return true;
+            }
+        }
         return false;
     }
     public void createLecturer()
@@ -98,7 +116,7 @@ public class Controller
         String nameTemp;
         do
         {
-            System.out.print("Input your username: ");
+            System.out.print("Input the Lecturer Username: ");
             usernameTemp = scan.nextLine();
             if(checkUsernameExist(usernameTemp))
             {
@@ -120,11 +138,13 @@ public class Controller
         while(true);
         do
         {
-            System.out.print("Input your password: ");
+            System.out.print("Input the Lecturer Password: ");
             passwordTemp = scan.nextLine();
             if(passwordTemp.length() < 6)
             {
                 System.err.println("Password must be at least 6 characters!");
+                System.err.println("Press ENTER to continue...");
+                scan.nextLine();
             }
             else
             {
@@ -134,7 +154,7 @@ public class Controller
         while(true);
         do
         {
-            System.out.print("Input your name: ");
+            System.out.print("Input Lecturer Name: ");
             nameTemp = scan.nextLine();
             if(nameTemp.length() < 6)
             {
@@ -151,6 +171,11 @@ public class Controller
         lecturers.add(new Lecturer(usernameTemp, passwordTemp, nameTemp, nikTemp++));
         System.out.println("Lecturer created!\nPress ENTER to continue...");
         scan.nextLine();
+    }
+
+    public void deleteLecturer()
+    {
+
     }
 
     public void createSubject()
@@ -265,6 +290,7 @@ public class Controller
     {
         for(Student i: students)
         {
+            System.out.println("Hallo " + i.getName());
             if(i.getUsername().equalsIgnoreCase(username) && i.getPassword().equals(password))
             {
                 return i;
@@ -277,7 +303,20 @@ public class Controller
     {
         for(Lecturer i: lecturers)
         {
-            System.out.println(i.getUsername() + "Berhasil");
+            System.out.println("Welcome Our " + i.getName());
+            if(i.getUsername().equalsIgnoreCase(username) && i.getPassword().equals(password))
+            {
+                return i;
+            }
+        }
+        return null;
+    }
+
+    public Admin checkAdmin(String username, String password)
+    {
+        for(Admin i: admins)
+        {
+            System.out.println("Konnichiwa " + i.getName());
             if(i.getUsername().equalsIgnoreCase(username) && i.getPassword().equals(password))
             {
                 return i;
@@ -316,7 +355,41 @@ public class Controller
     }
     public void updateStudent()
     {
+        int select = 0;
+        if(students.isEmpty())
+        {
+            System.err.println("No Student Found!");
+            System.err.println("Press ENTER to continue...");
+            scan.nextLine();
+            return;
+        }
+        displayStudent();
+        do
+        {
+            try
+            {
+                System.out.print("Select Student: ");
+                select = scan.nextInt();
+                scan.nextLine();
+            }
+            catch(Exception e)
+            {
+                scan.nextLine();
+                System.out.println("Invalid Input!");
+                System.out.println("Press ENTER to continue...");
+            }
+            String nameTemp = "";
+            System.out.print("Enter the new name: ");
+            nameTemp = scan.nextLine();
+            students.get(select - 1).setName(nameTemp);
+        }
+        while(true);
 
+
+//        else
+//        {
+//            System.err.println("NIM not found!");
+//        }
     }
     public void updateScore()
     {
