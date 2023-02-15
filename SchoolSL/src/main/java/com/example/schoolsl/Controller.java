@@ -1,7 +1,7 @@
 package com.example.schoolsl;
 
-import java.util.ArrayList;
-import java.util.Scanner;
+    import java.util.ArrayList;
+    import java.util.Scanner;
 public class Controller
 {
     Scanner scan = new Scanner(System.in);
