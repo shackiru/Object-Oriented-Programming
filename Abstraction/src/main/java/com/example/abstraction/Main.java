@@ -8,4 +8,7 @@ public class Main
         c.setName("Bajaj");
     }
     public static void main(String[] args)
+    {
+
+    }
 }
