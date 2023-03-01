@@ -7,6 +7,7 @@ public class Controller
     ArrayList<Customer> customers = new ArrayList<>();
     ArrayList<Admin> admins = new ArrayList<>();
     ArrayList<Food> foods = new ArrayList<>();
+    ArrayList<Order> orders = new ArrayList<>();
     public Controller()
     {
         customers.add(new Customer("shaquille", "shaquille", "SHAQ123"));
@@ -375,11 +376,45 @@ public class Controller
     }
     public void deleteFood()
     {
+        String searchFood;
+        do
+        {
+            displayFood();
+            System.out.print("Select Food: ");
+            searchFood = scan.nextLine();
+            if(checkFood(searchFood))
+            {
 
+                break;
+            }
+            else
+            {
+                System.err.println("No food found!");
+                System.err.println("Press any key to continue...");
+                scan.nextLine();
+                break;
+            }
+
+        }
+        while(true);
     }
     public void orderFood()
     {
+        String custTemp;
+        String foodNameTemp;
+        String quantityTemp;
 
+        int inx = 0;
+        while(inx != 1)
+        {
+            System.out.print("Add order [-1 to exit]: ");
+            inx = scan.nextInt();
+            if(inx == -1)
+            {
+                break;
+            }
+            orders.add(foods.get(inx - 1));
+        }
     }
 
     public void searchFood()
