@@ -8,13 +8,14 @@ import java.awt.event.ActionListener;
 public class LoginForm extends JInternalFrame implements ActionListener
 {
     private JButton btnLogin = new JButton("Login");
-    private JavaForm javaForm = new JavaForm();
+    private JavaForm javaForm;
     public LoginForm(JavaForm javaForm)
     {
         this.javaForm = javaForm;
 
         setLayout(new FlowLayout());
         add(btnLogin);
+        btnLogin.addActionListener(this);
 
         setClosable(true);
         setSize(300, 400);
@@ -25,6 +26,10 @@ public class LoginForm extends JInternalFrame implements ActionListener
     @Override
     public void actionPerformed(ActionEvent e)
     {
-
+        if(e.getSource().equals(btnLogin))
+        {
+            javaForm.doLogin();
+            dispose();
+        }
     }
 }
