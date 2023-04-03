@@ -23,7 +23,7 @@ public class Game
         this.gamePrice = gamePrice;
         this.gameQuantity = gameQuantity;
     }
-
+    
     public String getGameID() {
         return gameID;
     }
