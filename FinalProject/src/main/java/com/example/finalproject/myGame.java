@@ -12,5 +12,3 @@ public class myGame extends JFrame implements ActionListener
 
     }
 }
-
-buat yg login sama register
