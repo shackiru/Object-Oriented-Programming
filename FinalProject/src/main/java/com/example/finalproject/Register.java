@@ -40,14 +40,17 @@ public class Register extends JFrame implements ActionListener {
 //        Row 1
         panel_center.add(new JLabel("Username"));
         panel_center.add(text_username);
+        add(panel_center, "Center");
 
 //        Row 2
         panel_center.add(new JLabel("Email"));
         panel_center.add(text_email);
+        add(panel_center, "Center");
 
 //        Row 3
         panel_center.add(new JLabel("Address"));
         panel_center.add(text_address);
+        add(panel_center, "Center");
 
 //        Row 4
         panel_center.add(new JLabel("Gender"));
@@ -73,7 +76,7 @@ public class Register extends JFrame implements ActionListener {
 
         setTitle("Register Form");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(500, 800);
+        setSize(900, 500);
         setLocationRelativeTo(null);
         setVisible(true);
     }
@@ -82,7 +85,7 @@ public class Register extends JFrame implements ActionListener {
         init_components();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
         new Register();
     }
 

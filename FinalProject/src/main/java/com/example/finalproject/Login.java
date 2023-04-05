@@ -36,10 +36,12 @@ public class Login extends JFrame implements ActionListener {
 //        Row 1
         panel_center.add(new JLabel("Username"));
         panel_center.add(text_username);
+        add(panel_center, "Center");
 
 //        Row 2
         panel_center.add(new JLabel("Password"));
         panel_center.add(text_password);
+        add(panel_center, "Center");
 
 //        Footer
         panel_south.setLayout(new FlowLayout());
@@ -58,7 +60,7 @@ public class Login extends JFrame implements ActionListener {
     }
 
     public Login(){
-
+        init_components();
     }
 
     public static void main(String[] args) {
@@ -74,6 +76,3 @@ public class Login extends JFrame implements ActionListener {
         }
     }
 }
-
-//syek
-//ini emg gabisa di run kan

@@ -3,12 +3,8 @@ package com.example.finalproject;
 public class mainFrame {
 
 
-    initComp(){
 
-    }
-
-    public mainFrame{
-        initComp();
+    public mainFrame(){
     }
     public static void main(String[] args) {
         new mainFrame();
