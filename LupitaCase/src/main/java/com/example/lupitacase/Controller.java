@@ -398,24 +398,24 @@ public class Controller
         }
         while(true);
     }
-    public void orderFood()
-    {
-        String custTemp;
-        String foodNameTemp;
-        String quantityTemp;
-
-        int inx = 0;
-        while(inx != 1)
-        {
-            System.out.print("Add order [-1 to exit]: ");
-            inx = scan.nextInt();
-            if(inx == -1)
-            {
-                break;
-            }
-            orders.add(foods.get(inx - 1));
-        }
-    }
+//    public void orderFood()
+//    {
+//        String custTemp;
+//        String foodNameTemp;
+//        String quantityTemp;
+//
+//        int inx = 0;
+//        while(inx != 1)
+//        {
+//            System.out.print("Add order [-1 to exit]: ");
+//            inx = scan.nextInt();
+//            if(inx == -1)
+//            {
+//                break;
+//            }
+//            orders.add(foods.get(inx - 1));
+//        }
+//    }
 
     public void searchFood()
     {

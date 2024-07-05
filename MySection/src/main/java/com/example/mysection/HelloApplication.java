@@ -1,4 +1,4 @@
-package com.example.finalproject;
+package com.example.mysection;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

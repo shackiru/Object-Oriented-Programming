@@ -1,0 +1,16 @@
+A001,Mario Kart 8,Action,5,241267,Nintendo
+C003,Call of Duty: War,Action,15,282235,Activision
+E005,NBA 2K22,Sports,4,149186,2K Sports
+A006,Assassin's Creed V,Action,17,372331,Ubisoft
+B007,Minecraft,Casual,24,440385,Mojang Studios
+D009,Tetris,Casual,12,198374,Electronic Arts
+E015,Red Dead Redemption,Adventure,13,497215,Rockstar Games
+762,Skibidibopbop,Turkey,5,50000,Unknown
+B012,NHL 22,Sports,4,176894,EA Sports
+C008,GTA V,Action,18,485224,Rockstar Games
+E010,Far Cry 6,Adventure,8,210746,Ubisoft
+B002,FIFA 22,Sports,21,424819,EA Sports
+C013,Battlefield 2042,Action,14,310477,Electronic Arts
+A011,God of War,Action,9,274548,Sony Interactive
+D004,Zelda: Breath,Adventure,7,409871,Nintendo
+D014,Animal Crossing,Casual,16,181475,Nintendo

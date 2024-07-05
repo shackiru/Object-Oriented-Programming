@@ -30,7 +30,6 @@ public class Display
                 }
                 case 2:
                 {
-                    c1.orderFood();
                     break;
                 }
                 case 3:
